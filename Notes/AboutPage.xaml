@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.AboutPage"
+             Title="AboutPage">
+    <VerticalStackLayout>
+      <Image 
+            Source="github_logo_icon_229278.png"
+            HeightRequest="250"
+            Aspect="AspectFit"
+            SemanticProperties.Description="Logo do github" />
+        
+      <Label 
+            Text="Notes App V1.0"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+      <Button 
+            x:Name="EnviarGitBtn"
+            Text="Ir para Github" 
+            SemanticProperties.Hint="Vai para o GitHub"
+            Clicked="EnviarGitBtn_Clicked"
+            HorizontalOptions="Fill" />
+    </VerticalStackLayout>
+</ContentPage>
