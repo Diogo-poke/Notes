@@ -1,4 +1,6 @@
-﻿namespace Notes;
+﻿using Android.Views;
+
+namespace Notes;
    
     public partial class MainPage : ContentPage
     {
@@ -21,20 +23,18 @@
         File.WriteAllText(caminho, conteudo);
 
 
-        Console.WriteLine($"Arquivo salvo: {CaixaEditor}");
-        Console.WriteLine($"Localização: {caminho}");
+        DisplayAlert("Salvar", $"{caminho}", "ok");
     }
 
         private void ApagarBtn_Clicked(object sender, EventArgs e)
         {
-          File.Delete(caminho);
-        DisplayAlert("Arquivo apagado", "Arquivo apagado com sucesso", "OK");
+        CaixaEditor.Text = String.Empty ;
 
          if(File.Exists(caminho))
         {
             File.Delete(caminho);
-            CaixaEditor.Text = null;
-            DisplayAlert("Arquivo apagado", "Arquivo apagado com sucesso", "OK");
+           
+           DisplayAlert("Arquivo apagado", "Arquivo apagado com sucesso", "OK");
         }
          else
         {
